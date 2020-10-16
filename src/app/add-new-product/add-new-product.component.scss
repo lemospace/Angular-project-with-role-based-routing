@@ -1,0 +1,68 @@
+.main {
+    min-height: 500px;
+
+    .container {
+        height: 100%;
+
+        .form-container {
+            min-width: 450px;
+            margin: 30px auto;
+            background-color: #eee;
+            border-radius: 10px;
+
+            .form-heading {
+                padding: 20px;
+                background-color: #ddd;
+                border-radius: 10px 10px 0 0;
+
+                h1 {
+                    text-align: center;
+                }
+            }
+
+            form {
+                width: 350px;
+                margin: 20px auto;
+                padding-bottom: 20px;
+
+                label {
+                    color: #000;
+                    font-size: 16px;
+                }
+
+                input, select {
+                    width: 100%;
+                    height: 30px;
+                    margin-top: 5px;
+                    border-radius: 5px;
+                    border: 2px solid rgb(88, 88, 88);
+                }
+
+                :host(.p-button-label) {
+                    color: red;
+                }
+
+                p-fileUpload {
+                    width: 100%;
+                    cursor: pointer;
+                    color: rgb(33, 219, 27);
+                }
+
+                button {
+                    width: 100%;
+                    height: 40px;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: rgb(51, 209, 59);
+                    color: #fff;
+                    font-size: 16px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: rgb(38, 155, 44);
+                    }
+                }
+            }
+        }
+    }
+}

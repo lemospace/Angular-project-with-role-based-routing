@@ -1,0 +1,151 @@
+<div class="container">
+  <div class="header">
+    <h1>Complete your order</h1>
+  </div>
+  <h2 class="form-heading">{{ stepItems[activeStepIndex].label }}</h2>
+
+  <ng-container
+    *ngFor="let form of masterForm; let i = index; trackBy: trackByFn"
+  >
+    <form
+      action=""
+      [formGroup]="masterForm[i]"
+      *ngIf="i === activeStepIndex || masterForm.length === 1"
+    >
+      <div>
+        <div class="fields-container">
+          <div
+            *ngFor="let field of formFields[i]; trackBy: trackByFn"
+            [ngSwitch]="currentFormContent[i][field].type"
+          >
+            <div class="full-width">
+              <label class="field-label text-bold" [for]="field">{{
+                field | formatTitle
+              }}</label>
+
+              <ng-container *ngSwitchCase="'textarea'">
+                <textarea
+                  [id]="field"
+                  [formControlName]="field"
+                  [placeholder]="currentFormContent[i][field].placeholder"
+                  rows="3"
+                ></textarea>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'select'">
+                <select [formControlName]="field" [id]="field">
+                  <option value="">
+                    {{ currentFormContent[i][field].placeholder }}
+                  </option>
+                  <option
+                    *ngFor="
+                      let option of currentFormContent[i][field].options;
+                      trackBy: trackByFn
+                    "
+                    [value]="option.name"
+                  >
+                    {{ option.name }}
+                  </option>
+                </select>
+              </ng-container>
+
+              <ng-container *ngSwitchDefault>
+                <input
+                  [type]="currentFormContent[i][field].type"
+                  [name]="currentFormContent[i][field].name"
+                  [value]="currentFormContent[i][field].value"
+                  [formControlName]="field"
+                  [id]="field"
+                  [placeholder]="currentFormContent[i][field].placeholder"
+                />
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'radio'">
+                <div class="date-container">
+                  <div class="labels">
+                    <label
+                      *ngFor="
+                        let option of currentFormContent[i][field].options;
+                        trackBy: trackByFn
+                      "
+                    >
+                      {{ option.placeholder }}
+                    </label>
+                  </div>
+                  <div class="inputs">
+                    <input
+                      *ngFor="
+                        let option of currentFormContent[i][field].options;
+                        trackBy: trackByFn
+                      "
+                      type="radio"
+                      [name]="option.name"
+                      [value]="option.placeholder"
+                      [formControlName]="field"
+                      [id]="field"
+                      [placeholder]="option.placeholder"
+                    />
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+
+            <p
+              class="validation-error"
+              *ngIf="
+                (masterForm[i].get(field).dirty ||
+                  masterForm[i].get(field).touched) &&
+                masterForm[i].get(field).invalid &&
+                masterForm[i].get(field).errors
+              "
+            >
+              {{ getValidationMessage(i, field) }}
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="preview-container"
+          *ngIf="activeStepIndex === stepItems.length - 1"
+        >
+          <ul>
+            <li
+              class="form-details-list"
+              *ngFor="let field of masterFormFields; trackBy: trackByFn"
+            >
+              <span class="text-bold">{{ field | formatTitle }}: </span>
+              <span class="result"> {{ formData[field] || "N/A" }}</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="button-container">
+          <button
+            type="button"
+            [disabled]="!activeStepIndex"
+            (click)="goToStep('prev')"
+          >
+            Previous
+          </button>
+          <button
+            *ngIf="activeStepIndex === stepItems.length - 1"
+            type="submit"
+            (click)="onFormSubmit()"
+          >
+            Submit
+          </button>
+
+          <button
+            type="button"
+            [disabled]="
+              activeStepIndex === stepItems.length - 1 || masterForm[i].invalid
+            "
+            (click)="goToStep('next')"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </form>
+  </ng-container>
+</div>

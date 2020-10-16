@@ -1,0 +1,51 @@
+<button (click)="goBack()">go back</button>
+
+<div class="container" *ngIf="bike">
+  <div class="left">
+    <img src="{{ bike.imgUrl }}" alt="" />
+  </div>
+  <div class="right">
+    <div class="name">
+      <h1>{{ bike.name }}</h1>
+    </div>
+    <div class="description">
+      {{ bike.description }}
+    </div>
+
+    <div class="price">
+      <h3>{{ bike.price | currency: "EUR":"symbol" }}</h3>
+    </div>
+    <div class="color">
+      <select>
+        <option value="">{{ bike.color[0] }}</option>
+        <option value="">{{ bike.color[1] }}</option>
+        <option value="">{{ bike.color[2] }}</option>
+        <option value="">{{ bike.color[3] }}</option>
+      </select>
+    </div>
+    <div class="size">
+      <select>
+        <option value="">{{ bike.size[0] }}</option>
+        <option value="">{{ bike.size[1] }}</option>
+        <option value="">{{ bike.size[2] }}</option>
+        <option value="">{{ bike.size[3] }}</option>
+      </select>
+    </div>
+    <div class="quantity">
+      <label for="quant">Quantity</label> <br />
+      <input type="number" name="" id="quant" />
+    </div>
+    <button class="addToCart">
+      <i class="fas fa-cart-plus"></i> Add to cart
+    </button>
+    <button class="addToWish">
+      <i class="fas fa-magic"></i> Add to Wish List
+    </button>
+
+    <button class="edit" (click)="onEdit()">
+      <i class="fas fa-edit"></i> Edit
+    </button>
+
+
+  </div>
+</div>

@@ -1,0 +1,121 @@
+<div class="wrapper">
+  <header class="header">
+    <img src="./assets/img/header-image.jpg" alt="" />
+  </header>
+  <aside class="aside aside-1">
+    <div class="nav home">
+      <a routerLink="/main"> <i class="fas fa-home"></i></a>
+      <p>Product list</p>
+    </div>
+    <button *ngIf="rolesService.isLoggedIn()" class="btn btn-link" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i>
+      Logout</button>
+
+    <div class="modal-body">
+      <button (click)="login('ROLE_ADMIN')" class="btn-fb">
+        Login as Admin <i class="fas fa-user-shield"></i> </button> <br>
+      <br>
+      <button (click)="login('ROLE_OWNER')" class="btn-lgin">Login as Owner <i class="fas fa-user"></i></button>
+    </div>
+  </aside>
+  <div class="main">
+    <div class="container">
+      <div class="form-container">
+        <div class="form-heading">
+          <h1>Edit product</h1>
+        </div>
+        <form [formGroup]="newProductFrom" (ngSubmit)="onUpdate()">
+          <label for="imgUrl">Image</label>
+          <p-fileUpload id="imgUrl" customUpload="true" name="myfile[]" accept="image/*" maxFileSize="1000000"
+            (uploadHandler)="myUploader($event)"></p-fileUpload>
+
+          <input type="hidden" formControlName="imgUrl" />
+          <br /><br />
+
+          <label for="price">Price</label>
+          <input type="number" id="price" formControlName="price" />
+          <br /><br />
+
+          <label for="discount">Discount</label>
+          <input type="number" id="discount" formControlName="discount" />
+          <br /><br />
+
+          <label for="main">Main</label>
+          <select id="main" formControlName="main">
+            <option value="true">true</option>
+            <option value="">false</option>
+          </select>
+          <br /><br />
+
+          <label for="shop">Shop</label>
+          <input type="text" id="shop" formControlName="shop" />
+
+          <br /><br />
+
+          <label for="name">Name</label>
+          <input type="text" id="name" formControlName="name" />
+          <br /><br />
+
+          <label for="description">Description</label>
+          <input type="text" id="description" formControlName="description" />
+          <br /><br />
+
+          <label for="shipping">Shipping</label>
+          <input type="text" id="shipping" formControlName="shipping" />
+          <br /><br />
+
+          <label for="discountUntil">Discount until</label>
+          <input type="datetime-local" id="discountUntil" formControlName="discountUntil" />
+          <br /><br />
+
+          <label for="new">New</label>
+          <select id="new" formControlName="new">
+            <option value="true">true</option>
+            <option value="">false</option>
+          </select>
+          <br /><br />
+
+          <label for="color">Color</label>
+          <input type="text" id="color" formControlName="color" />
+          <br /><br />
+
+          <label for="size">Size</label>
+          <input type="text" id="size" formControlName="size" />
+          <br /><br />
+
+          <div formGroupName="review">
+            <h3>Review</h3>
+            <br />
+            <label for="author">Author</label>
+            <input type="text" id="author" formControlName="author" />
+            <br /><br />
+
+            <label for="text">Text</label>
+            <input type="text" id="text" formControlName="text" />
+            <br /><br />
+
+            <label for="rating">Rating</label>
+            <input type="text" id="rating" formControlName="rating" />
+            <br /><br />
+          </div>
+
+          <button type="submit">Save</button>
+          <button type="button" class="del" (click)="deleteBike()">
+            <i class="fas fa-trash-alt"></i> Delete product
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <aside class="aside aside-2">
+    <div class="nav order">
+      <a routerLink="/order">
+        <i class="fab fa-shopify"></i>
+      </a>
+      <p>Order</p>
+    </div>
+  </aside>
+  <footer class="footer">
+    <div>&copy; lemospace | 2020</div>
+  </footer>
+</div>

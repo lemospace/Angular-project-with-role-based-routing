@@ -1,0 +1,219 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "a a a" "b c d" "e e e";
+  -ms-grid-rows: 40% auto 5%;
+      grid-template-rows: 40% auto 5%;
+  -ms-grid-columns: 8% 1fr 8%;
+      grid-template-columns: 8% 1fr 8%;
+}
+
+.header {
+  color: #fff;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: a;
+  overflow: hidden;
+}
+
+.header img {
+  width: 100%;
+  max-height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.aside-1 {
+  background-color: rgba(117, 98, 98, 0.2);
+  position: relative;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: b;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.aside-1 .nav {
+  display: -ms-grid;
+  display: grid;
+}
+
+.aside-1 a {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.aside-1 p {
+  text-align: center;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: c;
+  position: relative;
+  color: #878787;
+}
+
+.aside-2 {
+  background-color: rgba(117, 98, 98, 0.2);
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: d;
+}
+
+.footer {
+  background: rgba(65, 61, 61, 0.6);
+  color: #fff;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: e;
+  text-align: center;
+  padding-top: 12px;
+}
+
+@media screen and (max-width: 992px) {
+  .wrapper {
+    height: 100%;
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 0;
+        grid-template-areas: "a" "b" "c" "d" "e";
+    -ms-grid-rows: 273px 63px 1fr 63px 44px;
+        grid-template-rows: 273px 63px 1fr 63px 44px;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+  }
+  .header {
+    color: #fff;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: a;
+  }
+  .header img {
+    max-width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .aside-1 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: b;
+    display: -ms-grid;
+    display: grid;
+    grid-auto-flow: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .aside-1 .nav {
+    font-size: 14px;
+  }
+  .aside-1 .nav a {
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+  }
+  .aside-1 .nav a img {
+    width: 50%;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+  .main {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: c;
+  }
+  .aside-2 {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: d;
+  }
+  .footer {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    grid-area: e;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    height: 100%;
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 0;
+        grid-template-areas: "a" "b" "c" "d" "e";
+    -ms-grid-rows: 185px 46px 1fr 46px 44px;
+        grid-template-rows: 185px 46px 1fr 46px 44px;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+  }
+  .header {
+    color: #fff;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: a;
+  }
+  .header img {
+    max-width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .aside-1 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: b;
+    display: -ms-grid;
+    display: grid;
+    grid-auto-flow: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .aside-1 .nav {
+    font-size: 14px;
+  }
+  .aside-1 .nav a {
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+  }
+  .aside-1 .nav a img {
+    width: 50%;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+  .main {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: c;
+  }
+  .aside-2 {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: d;
+  }
+  .footer {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    grid-area: e;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

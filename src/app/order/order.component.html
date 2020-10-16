@@ -1,0 +1,36 @@
+<div class="wrapper">
+  <header class="header">
+    <img src="./assets/img/header-image.jpg" alt="" />
+  </header>
+  <aside class="aside aside-1">
+    <div class="nav home">
+      <a routerLink="/main"> <i class="fas fa-home"></i></a>
+      <p>Product list</p>
+    </div>
+    <button *ngIf="rolesService.isLoggedIn()" class="btn btn-link" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i>
+      Logout</button>
+
+    <div class="modal-body">
+      <button (click)="login('ROLE_ADMIN')" class="btn-fb">
+        Login as Admin <i class="fas fa-user-shield"></i> </button> <br>
+      <br>
+      <button (click)="login('ROLE_OWNER')" class="btn-lgin">Login as Owner <i class="fas fa-user"></i></button>
+    </div>
+  </aside>
+  <div class="main">
+    <app-multi-step-form class="multi-step-form" [formContent]="formContent" (formSubmit)="onFormSubmit($event)">
+    </app-multi-step-form>
+  </div>
+  <aside class="aside aside-2">
+    <div class="nav addNewProduct">
+      <a routerLink="/addNewProduct">
+        <i class="far fa-plus-square"></i>
+      </a>
+      <p>Add new product</p>
+    </div>
+  </aside>
+  <footer class="footer">
+    <div>&copy; lemospace | 2020</div>
+  </footer>
+</div>

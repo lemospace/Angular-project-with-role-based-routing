@@ -1,0 +1,563 @@
+.container {
+    position: relative;
+    min-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    color: #000;
+    padding: 5px;
+
+    .deals {
+        position: relative;
+        border: 1px solid #ff931d;
+        list-style-type: none;
+        max-height: 200px;
+
+        a:link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:active {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        cursor: pointer;
+
+        .deals-container {
+            display: grid;
+
+            .left-container {
+                display: grid;
+                grid-template-columns: 20% 80%;
+
+                .deals__sale {
+                    text-align: center;
+                    background: #ff931d;
+                    width: 40px;
+                    height: 40px;
+                    padding-top: 7px;
+                    font-size: 12px;
+                    border-radius: 50%;
+                    color: #fff;
+                    margin: 10px 0 0 10px;
+                }
+
+                .name {
+                    padding-top: 10px;
+                    text-align: center;
+                    align-self: start;
+                    font-size: 14px;
+                    line-height: 14px;
+                }
+            }
+
+            .middle {
+                display: flex;
+                flex-direction: row;
+
+                .image {
+                    align-self: start;
+                    width: 60%;
+
+                    img {
+                        align-self: start;
+                    }
+                }
+
+                .description {
+                    max-width: 360px;
+                    justify-self: end;
+                    padding-right: 5px;
+                    width: 40%;
+                }
+            }
+        }
+
+        .details {
+            display: grid;
+
+            .price-row {
+                display: flex;
+                flex-direction: row;
+                padding: 4px 0;
+                margin: 4px 10px;
+                justify-content: space-between;
+                border-bottom: 2px dotted #878787;
+
+                .current-price {
+                    font-size: 18px;
+                    display: flex;
+                    align-items: flex-end;
+                    color: #ff931d;
+                    padding-left: 5px;
+                }
+
+                .shop {
+                    align-items: end;
+                    justify-content: end;
+                    padding-right: 10px;
+                }
+            }
+
+            .free-ship {
+                text-align: center;
+                height: 10px;
+                padding-bottom: 8px;
+                font-size: 14px;
+                color: rgb(43, 167, 53);
+            }
+
+            .info {
+                display: flex;
+                margin: 5px 10px;
+                padding: 5px 0px;
+                justify-content: space-around;
+                font-size: 16px;
+
+                .new {
+                    text-align: center;
+                    justify-self: center;
+                    color: rgb(43, 167, 53);
+                }
+
+                .timer {
+                    font-size: 14px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .deals:hover {
+        outline: 3px solid #ff931d;
+
+        .description {
+            text-decoration: underline;
+        }
+
+        .name {
+            text-decoration: underline;
+        }
+    }
+
+    .mainTrue {
+        display: grid;
+        border: 1px solid #fa2222;
+        max-height: 445px;
+        width: 100%;
+        grid-row: span 2;
+
+        .deals-container {
+            display: grid;
+
+            .left-container {
+                padding: 10px 10px;
+                display: grid;
+
+                .deals__sale {
+                    text-align: center;
+                    background: #fa2222;
+                    width: 60px;
+                    height: 60px;
+                    padding-top: 13px;
+                    font-size: 16px;
+                    border-radius: 50%;
+                    color: #fff;
+                }
+
+                .name {
+                    font-size: 18px;
+                }
+            }
+
+            .middle {
+                display: grid;
+
+                .image {
+                    justify-self: center;
+                    align-self: center;
+                    display: grid;
+                    width: 100%;
+
+                    img {
+                        max-height: 160px;
+                        object-fit: cover;
+                        justify-self: center;
+                        align-self: center;
+                    }
+                }
+
+                .description {
+                    text-align: justify;
+                    max-width: 360px;
+                    justify-self: center;
+                    padding: 15px;
+                    width: 100%;
+                }
+            }
+        }
+
+        .details {
+            display: grid;
+
+            .price-row {
+                display: flex;
+                flex-direction: row;
+                padding: 5px 0;
+                margin: 5px 10px;
+                justify-content: space-between;
+                border-bottom: 2px dotted #878787;
+
+                .current-price {
+                    font-size: 20px;
+                    display: flex;
+                    align-items: flex-end;
+                    color: #fa2222;
+                    padding-left: 5px;
+                }
+
+                .shop {
+                    align-items: end;
+                    justify-content: end;
+                    padding-right: 10px;
+                }
+            }
+
+            .free-ship {
+                text-align: center;
+                height: 20px;
+                padding: 5px;
+            }
+
+            .info {
+                display: flex;
+                margin: 5px 10px;
+                padding: 5px 0;
+                justify-content: space-around;
+
+                .new {
+                    text-align: center;
+                }
+
+                .timer {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        &:hover {
+            outline: 3px solid #fa2222;
+        }
+    }
+}
+
+.pink {
+    border: 1px solid #f867c0;
+
+    .deals-container {
+        .left-container {
+            .deals__sale {
+                background: #f867c0;
+            }
+        }
+    }
+
+    .details {
+        .price-row {
+            .current-price {
+                color: #f867c0;
+            }
+        }
+    }
+
+    &:hover {
+        outline: 3px solid #f867c0;
+    }
+}
+
+.badge {
+    visibility: hidden;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        margin: 0px auto;
+        display: grid;
+        grid-gap: 20px;
+        overflow: hidden;
+        margin: auto auto;
+
+        .deals {
+            min-width: 400px;
+            margin: 0 auto;
+        }
+
+        .mainTrue {
+            max-width: 400px;
+        }
+
+        .pink {
+            border: 1px solid #f867c0;
+
+            .deals-container {
+                .left-container {
+                    .deals__sale {
+                        background: #f867c0;
+                    }
+                }
+            }
+
+            .details {
+                .price-row {
+                    .current-price {
+                        color: #f867c0;
+                    }
+                }
+            }
+
+            &:hover {
+                outline: 3px solid #f867c0;
+            }
+        }
+
+        .deal-container {
+            max-width: 100%;
+            max-height: 100%;
+            overflow: hidden;
+        }
+    }
+
+    .image {
+        display: grid;
+
+        img {
+            max-height: 70px;
+            object-fit: cover;
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .container {
+        margin: 0px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+        overflow: hidden;
+        margin: auto auto;
+
+        .deals {
+            min-width: 400px;
+            margin: 0 auto;
+
+            .deal-container {
+                min-width: 100%;
+                min-height: 100%;
+                overflow: hidden;
+            }
+        }
+
+        .image {
+            display: grid;
+
+            img {
+                justify-self: center;
+                max-height: 65px;
+                object-fit: cover;
+            }
+        }
+
+        .mainTrue {
+            min-width: 400px;
+        }
+
+        .pink {
+            border: 1px solid #f867c0;
+
+            .deals-container {
+                .left-container {
+                    .deals__sale {
+                        background: #f867c0;
+                    }
+                }
+            }
+
+            .details {
+                .price-row {
+                    .current-price {
+                        color: #f867c0;
+                    }
+                }
+            }
+
+            &:hover {
+                outline: 3px solid #f867c0;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .container {
+        margin: 0px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15px;
+        overflow: hidden;
+        margin: auto auto;
+
+        .deals {
+            min-width: 400px;
+            margin: 0 auto;
+        }
+
+        .mainTrue {
+            max-width: 400px;
+        }
+
+        .pink {
+            border: 1px solid #f867c0;
+
+            .deals-container {
+                .left-container {
+                    .deals__sale {
+                        background: #f867c0;
+                    }
+                }
+            }
+
+            .details {
+                .price-row {
+                    .current-price {
+                        color: #f867c0;
+                    }
+                }
+            }
+
+            &:hover {
+                outline: 3px solid #f867c0;
+            }
+        }
+
+        .image {
+            display: grid;
+
+            img {
+                justify-self: center;
+                max-height: 70px;
+                object-fit: cover;
+            }
+        }
+
+        .info {
+            span {
+                padding: 0 2px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        margin: 0px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 15px;
+        overflow: hidden;
+        margin: auto auto;
+
+        .deals {
+            min-width: 300px;
+            margin: 0 auto;
+        }
+
+        .mainTrue {
+            min-width: 300px;
+        }
+
+        .deals-container {
+            max-width: 100%;
+            max-height: 100%;
+
+            .image {
+                display: grid;
+
+                img {
+                    max-height: 70px;
+                    object-fit: cover;
+                    justify-self: center;
+                }
+            }
+        }
+
+        .mainTrue {
+            display: grid;
+            border: 1px solid #fa2222;
+            max-height: 440px;
+            grid-row: span 2;
+
+            &:hover {
+                outline: 3px solid #fa2222;
+            }
+
+            .deals-container {
+                .left-container {
+                    .deals__sale {
+                        background: #fa2222;
+                        width: 60px;
+                        height: 60px;
+                        padding-top: 13px;
+                        font-size: 16px;
+                    }
+
+                    .image {
+                        display: grid;
+
+                        img {
+                            max-height: 160px;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+
+            .details {
+                .price-row {
+                    .current-price {
+                        color: #fa2222;
+                    }
+                }
+            }
+        }
+
+        .pink {
+            border: 1px solid #f867c0;
+
+            .deals-container {
+                .left-container {
+                    .deals__sale {
+                        background: #f867c0;
+                    }
+                }
+            }
+
+            .details {
+                .price-row {
+                    .current-price {
+                        color: #f867c0;
+                    }
+                }
+            }
+
+            &:hover {
+                outline: 3px solid #f867c0;
+            }
+        }
+    }
+}

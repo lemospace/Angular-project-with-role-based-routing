@@ -1,0 +1,52 @@
+<ul class="container bikes">
+  <li
+    *ngFor="let bike of firebaseData"
+    class="deals"
+    [ngClass]="{
+      mainTrue: bike.main,
+      pink: 70 > bike.discount && bike.discount > 50
+    }"
+  >
+    <a routerLink="/detail/{{ bike.id }}">
+      <div class="deals-container">
+        <div class="left-container">
+          <div class="deals__sale">
+            {{ bike.discount }}% <br />
+            off
+          </div>
+          <div class="name">
+            <span class="badge">{{ bike.id }}</span>
+            <h2>{{ bike.name }}</h2>
+          </div>
+        </div>
+        <div class="middle">
+          <div class="image">
+            <img src="{{ bike.imgUrl }}" alt="" />
+          </div>
+          <div class="description">{{ bike.description | slice: 0:35 }}...</div>
+        </div>
+        <div class="details">
+          <div class="price-row">
+            <div class="current-price">
+              {{ bike.price | currency: "EUR":"symbol" }}
+            </div>
+
+            <div class="shop">{{ bike.shop }}</div>
+          </div>
+          <div class="free-ship">{{ bike.shipping }}</div>
+          <div class="info">
+            <div class="new">
+              <div *ngIf="bike.new; else used">New</div>
+              <ng-template #used>
+                <div>Used</div>
+              </ng-template>
+            </div>
+
+            <span> | </span>
+            <div class="timer">Discount ends: {{ bike.discountUntil }}</div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>

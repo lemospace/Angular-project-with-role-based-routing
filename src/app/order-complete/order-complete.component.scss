@@ -1,0 +1,31 @@
+.thank-container {
+    max-width: 500px;
+    margin: 40px auto;
+
+    h1 {
+        text-align: center;
+        color: rgb(75, 74, 74);
+    }
+
+    .new-order {
+        margin: 20px auto;
+        display: grid;
+
+        button {
+            justify-self: center;
+            width: 200px;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(63, 190, 63);
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgb(33, 168, 33);
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.main {
+    width: calc(100% + 15px);
+    min-height: 500px;
+
+    .bikes-component {
+        max-height: 500px;
+        margin: 0 auto;
+        display: flex;
+        padding: 20px;
+    }
+}
